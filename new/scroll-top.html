@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+            integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"></script>
+        <style>
+            body,
+            html {
+                margin: 0;
+                padding: 0;
+                height: 3000px;
+            }
+
+            .sidebar-a {
+                color: #333;
+                text-decoration: none;
+            }
+
+            .sidebar-p {
+                color: #333;
+                text-decoration: none;
+                font-weight: bold;
+                text-align: center;
+            }
+
+            .icon-div {
+                background-color: #fff;
+                border-radius: 50%;
+                padding: 7px;
+                box-shadow: 0 0 20px 0 rgb(0 0 0 / 8%);
+                transition: all 0.5s;
+                margin: 10px;
+            }
+
+            .sidebar {
+                position: fixed;
+                right: 0;
+                top: 25%;
+                width: 80px;
+                background-color: RGBA(0, 0, 0, 0.06);
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                padding: 10px 0;
+                border-radius: 10px 0px 0px 10px;
+            }
+
+            .sidebar i {
+                color: #771b61;
+                padding: 10px;
+                font-size: 20px;
+                transition: color 0.3s;
+            }
+            .scro {
+                display: none;
+            }
+
+            .icon-div:hover i {
+                color: #fff;
+            }
+            .icon-div:hover {
+                background-color: #771b61;
+            }
+            @media only screen and (max-width: 600px) {
+                .sidebar {
+                    display: none !important;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="sidebar scro">
+            <a href="#" class="sidebar-a">
+                <div>
+                    <div class="icon-div">
+                        <i class="fas fa-home sidebar-icons"></i>
+                    </div>
+                    <p class="sidebar-p">Home</p>
+                </div>
+            </a>
+            <a href="#" class="sidebar-a">
+                <div>
+                    <div class="icon-div">
+                        <i class="fas fa-user sidebar-icons"></i>
+                    </div>
+                    <p class="sidebar-p">User</p>
+                </div>
+            </a>
+            <a href="#" class="sidebar-a">
+                <div>
+                    <div class="icon-div">
+                        <i class="fas fa-envelope sidebar-icons"></i>
+                    </div>
+                    <p class="sidebar-p">Mail</p>
+                </div>
+            </a>
+            <a href="#" class="sidebar-a">
+                <div>
+                    <div class="icon-div">
+                        <i class="fas fa-gear sidebar-icons"></i>
+                    </div>
+                    <p class="sidebar-p">Settings</p>
+                </div>
+            </a>
+        </div>
+
+        <script>
+            $(window).scroll(function () {
+                var $height = $(window).scrollTop();
+                if ($height > 120) {
+                    $(".scro").css("display", "flex");
+                } else {
+                    $(".scro").css("display", "none");
+                }
+            });
+        </script>
+    </body>
+</html>
